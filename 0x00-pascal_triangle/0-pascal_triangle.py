@@ -1,3 +1,5 @@
+#!/usr/python3
+
 def pascal_triangle(n):
 	num_list = []
 	if n <= 0:
