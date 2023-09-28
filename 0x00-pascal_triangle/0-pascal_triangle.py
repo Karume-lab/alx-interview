@@ -1,6 +1,8 @@
-#!/usr/python3
+#!/usr/bin/python3
+'''Pascal's triangle'''
 
 def pascal_triangle(n):
+	'''Draws Pascal's Triangle'''
 	num_list = []
 	if n <= 0:
 		return num_list
