@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-'''Pascal's triangle'''
+'''Pascal's triangle.
+'''
 
 
 def pascal_triangle(n):
-    '''Draws Pascal's Triangle'''
-    num_list = []
-    if n <= 0:
-        return num_list
-
-    result = [1]
-    num_list.append(result)
-    for i in range(1, n):
-        temp = [0] + result + [0]
-        result = []
-        for j in range(len(temp) - 1):
-            result.append(temp[j] + temp[j + 1])
-        num_list.append(result)
-
-    return num_list
+    '''Draws Pascal's Triangle
+    '''
+    tri = []
+    if type(n) is not int or n <= 0:
+        return tri
+    for i in range(n):
+        line = []
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                line.append(1)
+            elif i > 0 and j > 0:
+                line.append(tri[i - 1][j - 1] + tri[i - 1][j])
+        tri.append(line)
+    return tri
